@@ -5,16 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ToDoDbContext>(options =>
     options.UseMySql("name=ToDoDB", new MySqlServerVersion(new Version(8, 0, 36)))
 );
-// builder.Services.AddCors(options =>
-// {
-//     options.AddDefaultPolicy(builder =>
-//     {
-//         builder.AllowAnyOrigin()
-//                .AllowAnyMethod()
-//                .AllowAnyHeader()
-//                .AllowCredentials();
-//     });
-// });
+
  
 builder.Services.AddControllers(); // הוסף את שירותי MVC
 builder.Services.AddEndpointsApiExplorer();
